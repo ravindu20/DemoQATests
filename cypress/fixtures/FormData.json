@@ -1,0 +1,28 @@
+[
+    {
+        "firstName": "Ravindu",
+        "lastName": "Ranathunga",
+        "email": "ravindu20@gmail.com",
+        "telephonNo": "0714589631",
+        "subject": [
+            "Computer Science",
+            "Physics"
+        ],
+        "dob": "20 June 1994",
+        "current_address": "No:5/6, Old Pusssalla Road, Kegalle",
+        "photoPath": "3135715.png"
+    },
+    {
+        "firstName": "Sunil",
+        "lastName": "Sampath",
+        "email": "sunil@gmail.com",
+        "telephonNo": "0724589631",
+        "subject": [
+            "Computer Science",
+            "Physics"
+        ],
+        "dob": "20 June 1984",
+        "current_address": "No:5/6, Old Road, Kegalle",
+        "photoPath": "3135716.png"
+    }
+]
