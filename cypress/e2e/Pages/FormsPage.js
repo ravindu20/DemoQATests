@@ -43,7 +43,7 @@ export class formPage {
         cy.selectDate(this.dob_txt, dob)
         
         cy.selectMultipleValuesFromDropdown(this.multipleSubject_txt, this.subjectSelectOptin,subject)
-
+        
         cy.wait(2000)
         
         cy.get(this.sport_radioBtn).click()

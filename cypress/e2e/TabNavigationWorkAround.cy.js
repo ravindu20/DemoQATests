@@ -37,3 +37,11 @@ it('Tab Navigation workaround with target attr.', () => {
     //     win.opener.focus()
     // })
 })
+
+it.only('Tab Navigation common method', () => {
+
+    cy.visit('https://practice.automationbro.com/')
+    cy.tabNavigations('#contact-us')
+    cy.get('h1').should('have.text', 'Contact')
+})
+

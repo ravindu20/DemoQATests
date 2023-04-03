@@ -11,7 +11,7 @@ it('Handle drag and drop', () => {
         const y = offset.top;
         cy.log(`The element is located at (${x}, ${y})`);
     });
-
+ 
     cy.get('#draggable').drag('#simpleDropContainer', { target: { x: 300, y: 100 }, force: true })
     cy.get('#simpleDropContainer > #droppable > p').should('have.text', 'Dropped!')
 })

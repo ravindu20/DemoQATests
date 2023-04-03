@@ -60,6 +60,30 @@ Cypress.Commands.add('clickLink', (label) => {
 
  })
 
+/*this custom commands used to navigate through tabs which have target attribute in element
+ tabElement : elemnt of the tab navigation button
+ */
+ Cypress.Commands.add('tabNavigations', (tabElement) => { 
+
+    cy.get(tabElement).then(($btn) => {
+        if ($btn.attr('target')) {
+            cy.get(tabElement).invoke('removeAttr', 'target').click();
+        } else {
+            cy.log("No target element")
+        }
+    })
+ })
+
+ /*this custom commands used to switch between iframes
+ iframes : elemnt of the iframe
+ */
+ Cypress.Commands.add('switchingToIframes', (iframes) => { 
+
+    return cy.get(iframes).
+     its('0.contentDocument.body').should('be.visible').then(cy.wrap)
+ 
+})
+
 //
 //
 // -- This is a child command --

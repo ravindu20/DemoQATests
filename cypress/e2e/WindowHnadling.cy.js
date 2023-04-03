@@ -1,5 +1,5 @@
 ///<reference types = 'cypress' />
-
+import {commonFunc, getRandomNum} from '../support/commonMethods'
 it('Handling new Browser Window', function () {
     cy.visit('https://demoqa.com/browser-windows')
     cy.window().then((win) => {
@@ -14,7 +14,7 @@ it('Handling new Browser Window', function () {
         .should('have.text', 'This is a sample page')
 })
 
-it('Handling new Browser Window with message and link  as about:blank', function () {
+it.only('Handling new Browser Window with message and link  as about:blank', function () {
     // cy.visit('https://demoqa.com/browser-windows')
     // cy.window().then((win) => {
     //     cy.stub(win, 'open', url => {
@@ -25,5 +25,6 @@ it('Handling new Browser Window with message and link  as about:blank', function
     // cy.get('@popup')
     //     .should("be.called")
     
-
+   const randomNum =  getRandomNum(800, 1000)
+   cy.log(`Random number generated: ${randomNum}`);
 })
