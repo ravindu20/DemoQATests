@@ -13,6 +13,7 @@ Run files
     Select e2e and next select the file need to run
     
 Run files in CLI : npx cypress run
+
 Run a specific file: npx run cypress -s ./cypress/e2e/testfilename
 
     
