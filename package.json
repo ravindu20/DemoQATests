@@ -6,10 +6,12 @@
   "scripts": {
     "test": "npm run cypress-test || npm run posttest",
     "cypress-test": "cypress run -b chrome",
+    "cypress-test-headed": "cypress run -b chrome --headed",
     "posttest": "npm run merge-reports && npm run genarate-htmlreport",
     "merge-reports": "mochawesome-merge ./cypress/reports/*.json > ./outputReport.json",
     "genarate-htmlreport": "marge ./outputReport.json --reportDir ./cypress/reports",
-    "test2": "cypress open"
+    "test2": "cypress open",
+    "cypress-parallel": "cypress-parallel -d ./cypress/e2e/ -t 4 -s cypress-test"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "cypress": "^12.7.0",
     "cypress-downloadfile": "^1.2.3",
     "cypress-multi-reporters": "^1.6.3",
+    "cypress-parallel": "^0.12.0",
     "mochawesome-merge": "^4.2.2",
     "mochawesome-report-generator": "^6.2.0",
     "node-xlsx": "^0.21.0",
