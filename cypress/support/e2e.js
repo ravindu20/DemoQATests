@@ -41,3 +41,24 @@ Cypress.on("test:after:run", (test, runnable) => {
     addContext({ test }, screenshot);
   }
 });
+
+// const xlsx = require('node-xlsx').default; 
+// const fs = require('fs'); // for file
+// const path = require('path'); // for file path
+const xlsx = require('xlsx');
+module.exports = (on, config) => {
+  initPlugin(on, config);
+  on("task", {
+  
+    generateJSONFromExcel: generateJSONFromExcel,
+    
+  });
+  return config;
+   } 
+
+  // Excel To JSON
+export function generateJSONFromExcel(agrs) {
+  const wb = xlsx.readFile(agrs.excelFilePath, { dateNF: "mm/dd/yyyy" });
+  const ws = wb.Sheets[agrs.sheetName];
+  return xlsx.utils.sheet_to_json(ws, { raw: false });
+}

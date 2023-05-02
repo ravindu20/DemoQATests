@@ -1,6 +1,6 @@
 ///<reference types = 'cypress' />
 import 'cypress-iframe'
-describe('I frame handlin approaches', ()=>{
+describe('I frame handling approaches', ()=>{
 
     it('Handle IFrames Approach 1', ()=>{
         cy.visit('https://demoqa.com/frames')

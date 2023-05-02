@@ -84,6 +84,10 @@ Cypress.Commands.add('clickLink', (label) => {
  
 })
 
+Cypress.Commands.add("parseXlsx", (inputFile) => {
+    return cy.task('parseXlsx', { filePath: inputFile })
+    });
+
 //
 //
 // -- This is a child command --
